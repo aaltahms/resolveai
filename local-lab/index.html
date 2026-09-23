@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ResolveAI · Check & fix</title>
+    <style>
+      :root {
+        font:
+          16px/1.6 system-ui,
+          sans-serif;
+        color: #18304d;
+        background: #f3f6fa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      header {
+        padding: 20px max(20px, calc((100% - 760px) / 2));
+        background: #10243e;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      header strong {
+        font-size: 22px;
+      }
+      header a {
+        color: #c7ddff;
+        font-size: 14px;
+      }
+      main {
+        max-width: 800px;
+        margin: auto;
+        padding: 38px 20px;
+      }
+      h1 {
+        font-size: clamp(28px, 5vw, 38px);
+        line-height: 1.2;
+        letter-spacing: -1px;
+        margin: 0 0 12px;
+      }
+      h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin: 0 0 12px;
+      }
+      h3 {
+        font-size: 19px;
+        line-height: 1.4;
+      }
+      .intro {
+        color: #526780;
+        max-width: 620px;
+        margin: 0 0 28px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #dce4ef;
+        border-radius: 16px;
+        padding: 28px;
+        margin-bottom: 24px;
+      }
+      .steps {
+        display: flex;
+        list-style: none;
+        gap: 18px;
+        padding: 0 0 20px;
+        margin: 0 0 24px;
+        border-bottom: 1px solid #e3e9f1;
+        color: #5c6e85;
+        font-size: 14px;
+      }
+      .steps li[aria-current='step'] {
+        color: #1655ad;
+        font-weight: 700;
+      }
+      .steps li {
+        flex: 1;
+      }
+      .status {
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 1.35;
+        margin-bottom: 8px;
+      }
+      p {
+        margin: 10px 0 18px;
+      }
+      .muted {
+        color: #5c6e85;
+        font-size: 14px;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        border: 1px solid #c6d4e4;
+        border-radius: 8px;
+        padding: 11px 18px;
+        color: #193d68;
+        background: white;
+        cursor: pointer;
+        margin: 4px 8px 4px 0;
+      }
+      button.primary {
+        background: #175cd3;
+        border-color: #175cd3;
+        color: white;
+        font-weight: 650;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #b9c9db;
+        border-radius: 8px;
+        margin: 8px 0 14px;
+      }
+      a {
+        color: #165bbb;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      :focus-visible {
+        outline: 3px solid #5c99ee;
+        outline-offset: 4px;
+      }
+      details {
+        border: 1px solid #dce4ef;
+        border-radius: 10px;
+        background: white;
+        padding: 16px 20px;
+        margin: 14px 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+      }
+      details[open] > summary {
+        margin-bottom: 16px;
+      }
+      #repair-plan:empty {
+        display: none;
+      }
+      #repair-error:not(:empty),
+      #error:not(:empty) {
+        color: #a12525;
+        background: #fff1ee;
+        border-radius: 8px;
+        padding: 12px;
+      }
+      pre {
+        font:
+          13px/1.6 ui-monospace,
+          monospace;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        background: #edf2f8;
+        padding: 14px;
+        max-height: 260px;
+        overflow: auto;
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        overflow-wrap: anywhere;
+      }
+      .bars {
+        display: flex;
+        gap: 3px;
+        height: 12px;
+      }
+      .bars span {
+        flex: 1;
+        background: #ccd7e5;
+      }
+      .bars .ok {
+        background: #23856b;
+      }
+      .bars .fail {
+        background: #c54d4d;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      footer {
+        font-size: 14px;
+        color: #65788f;
+        margin-top: 28px;
+      }
+      #repair-history-list:empty:after {
+        content: 'No repairs recorded yet.';
+      }
+      @media (max-width: 520px) {
+        main {
+          padding: 26px 16px;
+        }
+        .card {
+          padding: 22px 18px;
+        }
+        .steps {
+          gap: 10px;
+        }
+        header {
+          padding: 16px;
+          align-items: center;
+        }
+        header a {
+          max-width: 110px;
+          text-align: right;
+        }
+        button {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>ResolveAI</strong
+      ><nav aria-label="ResolveAI areas"><a href="/">Mac checks</a> · <a href="/guide">How to use</a> · <a href="http://127.0.0.1:3000/">Incident workspace</a></nav>
+    </header>
+    <main>
+      <h1>Check a problem. Review a fix.</h1>
+      <p class="intro">
+        This checks whether the sample app on your Mac can save data. It does
+        not scan or repair your whole computer.
+      </p>
+      <section class="card" aria-label="Current problem and fix">
+        <ol class="steps" aria-label="Troubleshooting progress">
+          <li id="step-check" aria-current="step">1. Check</li>
+          <li id="step-review">2. Review fix</li>
+          <li id="step-result">3. Result</li>
+        </ol>
+        <div id="health" class="status" role="status">Checking saving…</div>
+        <p id="repair-message">This usually takes a few seconds.</p>
+        <button id="diagnose-repair" class="primary" disabled>
+          Check the problem
+        </button>
+        <div id="repair-plan"></div>
+        <p id="repair-error" role="alert"></p>
+        <p class="muted">
+          Checks run automatically. No repair runs until you approve it.
+        </p>
+      </section>
+      <details id="try-save">
+        <summary>Try saving a note</summary>
+        <p>
+          Use this small test to see the problem yourself—or confirm that the
+          fix worked.
+        </p>
+        <form id="request-form">
+          <label for="request-title">Test note</label
+          ><input
+            id="request-title"
+            maxlength="120"
+            required
+            placeholder="A short test message"
+          /><button id="submit-request" class="primary">Save note</button>
+        </form>
+        <p id="request-result" role="status"></p>
+        <details>
+          <summary>Saved notes</summary>
+          <ul id="submitted">
+            <li>No saved notes yet.</li>
+          </ul>
+        </details>
+      </details>
+      <details id="repair-history">
+        <summary>Past repairs</summary>
+        <div id="repair-history-list"></div>
+      </details>
+      <details>
+        <summary>Test a problem</summary>
+        <p>
+          These controls deliberately break this sample app so you can try the
+          check-and-fix flow above.
+        </p>
+        <button id="readonly">Block saving</button
+        ><button id="stop" disabled>Stop the app</button>
+        <details>
+          <summary>More test controls</summary>
+          <button id="lock">Block the database</button
+          ><button id="slow">Make saving slow</button
+          ><button id="start" disabled>Start the app</button
+          ><button id="restore">Reset test conditions</button>
+          <p class="muted">
+            Slow saving does not have an automatic fix. Reset the test
+            conditions to recover it.
+          </p>
+        </details>
+      </details>
+      <details id="guidance">
+        <summary>Incident record</summary>
+        <p id="next"></p>
+        <a id="desk" href="http://127.0.0.1:3000/">Open incident</a>
+        <p id="error" role="alert"></p>
+      </details>
+      <details>
+        <summary>Technical details</summary>
+        <p class="muted">Optional diagnostic evidence for developers.</p>
+        <p id="latest"></p>
+        <p id="incident"></p>
+        <h2>Stored records · <span id="record-count">0</span></h2>
+        <pre id="records"></pre>
+        <h2>Monitor checks</h2>
+        <div id="bars" class="bars" aria-label="Recent health checks"></div>
+        <pre id="samples"></pre>
+        <h2>Activity</h2>
+        <ul id="events"></ul>
+        <h2>Evaluation</h2>
+        <pre id="evaluation"></pre>
+      </details>
+      <footer>
+        Local prototype · Changes apply only to this project’s sample app.
+      </footer>
+    </main>
+    <script type="module" src="/page-ui.js"></script>
+    <script type="module" src="/repair-ui.js"></script>
+  </body>
+</html>
