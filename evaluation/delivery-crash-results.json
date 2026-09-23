@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-10T06:42:13.809Z",
+  "completed": true,
+  "probeSource": "fixed synthetic observations",
+  "delivery": "real local collector HTTP API",
+  "aiCalls": 0,
+  "forcedCrashes": 2,
+  "incidentId": "INV-b59955f1-59ee-4684-b78e-2ba1dbeaad56",
+  "newIncidents": 1,
+  "recoveryNotes": 1,
+  "finalRevision": 2,
+  "pendingEvents": 0
+}

@@ -1,0 +1,123 @@
+{
+  "at": "2026-09-09T23:04:15.409Z",
+  "baselineClassification": "unknown",
+  "samples": [
+    {
+      "ok": false,
+      "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+      "latencyMs": 6,
+      "requestId": "94f0affd-624a-4961-88e1-8e1abdd41a3b",
+      "trace": [
+        {
+          "type": "trace",
+          "requestId": "94f0affd-624a-4961-88e1-8e1abdd41a3b",
+          "stage": "application",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "94f0affd-624a-4961-88e1-8e1abdd41a3b",
+          "stage": "application",
+          "status": "completed",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "94f0affd-624a-4961-88e1-8e1abdd41a3b",
+          "stage": "database_write",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "94f0affd-624a-4961-88e1-8e1abdd41a3b",
+          "stage": "database",
+          "status": "failed",
+          "elapsedMs": 0,
+          "error": "database is locked",
+          "queryOnly": false
+        }
+      ],
+      "at": "2026-09-09T23:04:14.961Z"
+    },
+    {
+      "ok": false,
+      "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+      "latencyMs": 6,
+      "requestId": "b6702171-0fa8-4f13-b800-3b46f945c7c4",
+      "trace": [
+        {
+          "type": "trace",
+          "requestId": "b6702171-0fa8-4f13-b800-3b46f945c7c4",
+          "stage": "application",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "b6702171-0fa8-4f13-b800-3b46f945c7c4",
+          "stage": "application",
+          "status": "completed",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "b6702171-0fa8-4f13-b800-3b46f945c7c4",
+          "stage": "database_write",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "b6702171-0fa8-4f13-b800-3b46f945c7c4",
+          "stage": "database",
+          "status": "failed",
+          "elapsedMs": 0,
+          "error": "database is locked",
+          "queryOnly": false
+        }
+      ],
+      "at": "2026-09-09T23:04:12.960Z"
+    },
+    {
+      "ok": false,
+      "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+      "latencyMs": 7,
+      "requestId": "1f0a5e9f-697c-43eb-8193-2c488e9cacb4",
+      "trace": [
+        {
+          "type": "trace",
+          "requestId": "1f0a5e9f-697c-43eb-8193-2c488e9cacb4",
+          "stage": "application",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "1f0a5e9f-697c-43eb-8193-2c488e9cacb4",
+          "stage": "application",
+          "status": "completed",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "1f0a5e9f-697c-43eb-8193-2c488e9cacb4",
+          "stage": "database_write",
+          "status": "started",
+          "elapsedMs": 0
+        },
+        {
+          "type": "trace",
+          "requestId": "1f0a5e9f-697c-43eb-8193-2c488e9cacb4",
+          "stage": "database",
+          "status": "failed",
+          "elapsedMs": 0,
+          "error": "database is locked",
+          "queryOnly": false
+        }
+      ],
+      "at": "2026-09-09T23:04:10.959Z"
+    }
+  ]
+}

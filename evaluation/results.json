@@ -1,0 +1,157 @@
+{
+  "at": "2026-09-09T20:52:29.774Z",
+  "model": "gpt-5.6-luna",
+  "requests": 6,
+  "actualCostUSD": 0.0005548,
+  "results": [
+    {
+      "fault": "readonly",
+      "expected": "database_read_only",
+      "detectedMs": 5548,
+      "incidentId": "INC-83e0cdb5-3cfe-4609-b1a9-ef50699c1a1f",
+      "arms": [
+        {
+          "name": "complaint_only",
+          "input": "User report: My request will not save.",
+          "answer": {
+            "classification": "unknown",
+            "nextCheck": "Check the server response and logs for a specific error or timeout."
+          },
+          "usage": {
+            "input_tokens": 119,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 30,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 149
+          },
+          "supportedClassification": true
+        },
+        {
+          "name": "resolveai_collected_evidence",
+          "input": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database\nhealth HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database\nhealth HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "answer": {
+            "classification": "database_read_only",
+            "nextCheck": "Verify the database or filesystem is mounted read-write and that the application has write permissions."
+          },
+          "usage": {
+            "input_tokens": 187,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 36,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 223
+          },
+          "supportedClassification": true
+        },
+        {
+          "name": "manual_same_evidence",
+          "input": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database\nhealth HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database\nhealth HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "answer": {
+            "classification": "database_read_only",
+            "nextCheck": "Verify the database filesystem or volume is mounted read-only and inspect database/application logs for the cause."
+          },
+          "usage": {
+            "input_tokens": 187,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 38,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 225
+          },
+          "supportedClassification": true
+        }
+      ]
+    },
+    {
+      "fault": "slow",
+      "expected": "write_timeout",
+      "detectedMs": 5552,
+      "incidentId": "INC-8830ec17-e18e-4d30-82c5-aff6810e79e2",
+      "arms": [
+        {
+          "name": "complaint_only",
+          "input": "User report: My request will not save.",
+          "answer": {
+            "classification": "unknown",
+            "nextCheck": "Check the application error details and server logs for the failed save attempt."
+          },
+          "usage": {
+            "input_tokens": 119,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 31,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 150
+          },
+          "supportedClassification": true
+        },
+        {
+          "name": "resolveai_collected_evidence",
+          "input": "health HTTP 200; write/read-back TimeoutError\nhealth HTTP 200; write/read-back TimeoutError\nhealth HTTP 200; write/read-back TimeoutError",
+          "answer": {
+            "classification": "write_timeout",
+            "nextCheck": "Inspect write/read-back operation logs to identify where the timeout occurs."
+          },
+          "usage": {
+            "input_tokens": 142,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 101,
+            "output_tokens_details": {
+              "reasoning_tokens": 68
+            },
+            "total_tokens": 243
+          },
+          "supportedClassification": true
+        },
+        {
+          "name": "manual_same_evidence",
+          "input": "health HTTP 200; write/read-back TimeoutError\nhealth HTTP 200; write/read-back TimeoutError\nhealth HTTP 200; write/read-back TimeoutError",
+          "answer": {
+            "classification": "write_timeout",
+            "nextCheck": "Inspect write-path and dependency latency logs around the TimeoutError."
+          },
+          "usage": {
+            "input_tokens": 142,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 77,
+            "output_tokens_details": {
+              "reasoning_tokens": 45
+            },
+            "total_tokens": 219
+          },
+          "supportedClassification": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Two known scenarios; one response per arm; no statistical accuracy claim.",
+    "Manual and automatic evidence arms receive identical prompts and evidence.",
+    "This uses the API model as a chat baseline, not the ChatGPT product.",
+    "Timeout classification identifies the failure boundary, not its root cause.",
+    "Ground truth and control events excluded from model inputs."
+  ]
+}

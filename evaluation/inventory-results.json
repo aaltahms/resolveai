@@ -1,0 +1,68 @@
+{
+  "at": "2026-09-10T00:10:25.176Z",
+  "completed": true,
+  "aiCalls": 0,
+  "healthy": {
+    "ok": true,
+    "requestId": "94e80de3-54ff-4d87-9a05-57c07d103ffc",
+    "trace": [],
+    "at": "2026-09-10T00:10:25.290Z",
+    "latencyMs": 8,
+    "detail": "Inventory readiness HTTP 200; create item HTTP 201; independent item read HTTP 200; content matched=true"
+  },
+  "evidence": [
+    {
+      "ok": false,
+      "requestId": "d955b5f5-2424-44fb-bc7c-641b5fcf105a",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.397Z",
+      "latencyMs": 2,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 503; error=storage_unavailable"
+    },
+    {
+      "ok": false,
+      "requestId": "29690e8f-c5b5-4b6d-acd0-8ad8684eaddc",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.399Z",
+      "latencyMs": 1,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 503; error=storage_unavailable"
+    },
+    {
+      "ok": false,
+      "requestId": "9613b515-c706-4b06-b7de-5fafee529471",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.400Z",
+      "latencyMs": 2,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 503; error=storage_unavailable"
+    }
+  ],
+  "recovered": [
+    {
+      "ok": true,
+      "requestId": "d0f06bb2-deb8-4081-ac0f-32f7e137dae1",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.517Z",
+      "latencyMs": 2,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 201; independent item read HTTP 200; content matched=true"
+    },
+    {
+      "ok": true,
+      "requestId": "56671b47-f555-4cab-b615-4348433b0a3e",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.519Z",
+      "latencyMs": 2,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 201; independent item read HTTP 200; content matched=true"
+    },
+    {
+      "ok": true,
+      "requestId": "659b505a-4f12-48d0-9973-273ce4b5a101",
+      "trace": [],
+      "at": "2026-09-10T00:10:25.521Z",
+      "latencyMs": 2,
+      "detail": "Inventory readiness HTTP 200; create item HTTP 201; independent item read HTTP 200; content matched=true"
+    }
+  ],
+  "classification": "unknown",
+  "incidentId": "INC-e4ccbaf6-ac16-4ceb-8c99-92d44b74cbdb",
+  "interpretation": "External observations locate failure in item creation, but cannot establish the private storage root cause. The collector correctly abstained."
+}

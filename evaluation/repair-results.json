@@ -1,0 +1,93 @@
+{
+  "at": "2026-09-13T23:40:16.552Z",
+  "scope": "Controlled faults in the owned local Node/SQLite service; not general device repair",
+  "originRejection": true,
+  "stalePlanRejection": true,
+  "userRequestRetention": true,
+  "results": [
+    {
+      "fault": "readonly",
+      "action": "enable-writes",
+      "status": "verified",
+      "verification": [
+        {
+          "id": "d32a0793-38f8-40a8-bb92-b83f6de1a0eb",
+          "at": "2026-09-13T23:39:34.639Z",
+          "ok": true,
+          "elapsedMs": 8,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "e0acc5ce-74b6-47ba-86c3-a95ff2ed0e3a",
+          "at": "2026-09-13T23:39:34.646Z",
+          "ok": true,
+          "elapsedMs": 7,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "5dbfda75-d5da-46ef-bd1b-890251ceba45",
+          "at": "2026-09-13T23:39:34.652Z",
+          "ok": true,
+          "elapsedMs": 6,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        }
+      ]
+    },
+    {
+      "fault": "lock",
+      "action": "release-owned-lock",
+      "status": "verified",
+      "verification": [
+        {
+          "id": "b4fd1734-103d-4465-bfdf-3865ce74e900",
+          "at": "2026-09-13T23:39:46.843Z",
+          "ok": true,
+          "elapsedMs": 9,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "3f284a27-6ae0-4c2e-a004-172108b679b8",
+          "at": "2026-09-13T23:39:46.850Z",
+          "ok": true,
+          "elapsedMs": 7,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "2b6a1ee2-1913-4a98-92f3-6244b2b29dac",
+          "at": "2026-09-13T23:39:46.856Z",
+          "ok": true,
+          "elapsedMs": 6,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        }
+      ]
+    },
+    {
+      "fault": "stop",
+      "action": "start-service",
+      "status": "verified",
+      "verification": [
+        {
+          "id": "26473520-f793-460d-bb5e-457fb45aa3c9",
+          "at": "2026-09-13T23:39:58.684Z",
+          "ok": true,
+          "elapsedMs": 6,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "c62b1be1-e177-4401-8940-759958044d42",
+          "at": "2026-09-13T23:39:58.688Z",
+          "ok": true,
+          "elapsedMs": 4,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        },
+        {
+          "id": "ebec325b-47da-47d8-a745-5c32a1b6b5b5",
+          "at": "2026-09-13T23:39:58.693Z",
+          "ok": true,
+          "elapsedMs": 5,
+          "detail": "Write HTTP 201; independent read HTTP 200; matching stored record confirmed"
+        }
+      ]
+    }
+  ]
+}

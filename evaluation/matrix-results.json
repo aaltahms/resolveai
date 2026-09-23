@@ -1,0 +1,736 @@
+{
+  "at": "2026-09-09T23:09:18.611Z",
+  "kind": "known-case regression matrix",
+  "aiCalls": 0,
+  "results": [
+    {
+      "round": 1,
+      "fault": "readonly",
+      "expected": "database_read_only",
+      "actual": "database_read_only",
+      "detectionMs": 5550,
+      "recoveryMs": 5566,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-068e03b6-3ce2-48b6-9a1a-3146e2e4bb44",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 7,
+          "requestId": "06a162ad-b2d2-41ed-9199-4cb09e5a021d",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "06a162ad-b2d2-41ed-9199-4cb09e5a021d",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "06a162ad-b2d2-41ed-9199-4cb09e5a021d",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "06a162ad-b2d2-41ed-9199-4cb09e5a021d",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "06a162ad-b2d2-41ed-9199-4cb09e5a021d",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:09:30.397Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 5,
+          "requestId": "7e1cc7a7-9d9d-4a12-a246-977cbdf35a07",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "7e1cc7a7-9d9d-4a12-a246-977cbdf35a07",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "7e1cc7a7-9d9d-4a12-a246-977cbdf35a07",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "7e1cc7a7-9d9d-4a12-a246-977cbdf35a07",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "7e1cc7a7-9d9d-4a12-a246-977cbdf35a07",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:09:28.394Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 6,
+          "requestId": "fc480606-88b1-4ab2-8841-5b41a567e59b",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "fc480606-88b1-4ab2-8841-5b41a567e59b",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "fc480606-88b1-4ab2-8841-5b41a567e59b",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "fc480606-88b1-4ab2-8841-5b41a567e59b",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "fc480606-88b1-4ab2-8841-5b41a567e59b",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:09:26.395Z"
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "fault": "slow",
+      "expected": "application_wait",
+      "actual": "application_wait",
+      "detectionMs": 7061,
+      "recoveryMs": 5081,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-45f92aa7-d768-4c29-931d-424c0378d844",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1004,
+          "requestId": "0bc8d28f-f4dc-49c2-b778-82ee91460b9f",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "0bc8d28f-f4dc-49c2-b778-82ee91460b9f",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:09:45.401Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1005,
+          "requestId": "8faa7326-7043-4c86-800b-172542965aec",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "8faa7326-7043-4c86-800b-172542965aec",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:09:43.401Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1004,
+          "requestId": "800b76d4-e283-459b-902f-07920b1e38dd",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "800b76d4-e283-459b-902f-07920b1e38dd",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:09:41.399Z"
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "fault": "lock",
+      "expected": "database_locked",
+      "actual": "database_locked",
+      "detectionMs": 5550,
+      "recoveryMs": 6089,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-2166857b-094c-4fdd-a145-5b516e97a631",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 4,
+          "requestId": "b7af5f13-defb-4122-8481-67080d43b577",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "b7af5f13-defb-4122-8481-67080d43b577",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b7af5f13-defb-4122-8481-67080d43b577",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b7af5f13-defb-4122-8481-67080d43b577",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b7af5f13-defb-4122-8481-67080d43b577",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:09:58.408Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 6,
+          "requestId": "b13d2a1e-cbdf-4547-ac55-68816ea0001c",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "b13d2a1e-cbdf-4547-ac55-68816ea0001c",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b13d2a1e-cbdf-4547-ac55-68816ea0001c",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b13d2a1e-cbdf-4547-ac55-68816ea0001c",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "b13d2a1e-cbdf-4547-ac55-68816ea0001c",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:09:56.410Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 6,
+          "requestId": "1c76264f-2f98-4011-82ec-7dce9209dbc7",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "1c76264f-2f98-4011-82ec-7dce9209dbc7",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "1c76264f-2f98-4011-82ec-7dce9209dbc7",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "1c76264f-2f98-4011-82ec-7dce9209dbc7",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "1c76264f-2f98-4011-82ec-7dce9209dbc7",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 1,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:09:54.410Z"
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "fault": "stop",
+      "expected": "unreachable",
+      "actual": "unreachable",
+      "detectionMs": 6057,
+      "recoveryMs": 5380,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-afc0451e-ed58-41c4-9a37-2e427ca34190",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 2,
+          "requestId": "9da9a244-9cc7-4666-b4db-2257dbb423e0",
+          "trace": [],
+          "at": "2026-09-09T23:10:12.411Z"
+        },
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 2,
+          "requestId": "1d68543d-baa3-40ac-9212-0d0ead1a69dd",
+          "trace": [],
+          "at": "2026-09-09T23:10:10.410Z"
+        },
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 3,
+          "requestId": "4348b1c9-d198-42bf-81ea-2cee4a74572a",
+          "trace": [],
+          "at": "2026-09-09T23:10:08.409Z"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "fault": "stop",
+      "expected": "unreachable",
+      "actual": "unreachable",
+      "detectionMs": 6073,
+      "recoveryMs": 5928,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-14d96ff5-cbcb-4d35-a651-c6673fffe97a",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 2,
+          "requestId": "16fbe50f-245a-4cfe-8f33-11ba162c9d62",
+          "trace": [],
+          "at": "2026-09-09T23:10:26.417Z"
+        },
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 2,
+          "requestId": "56e35567-3c7a-4270-80af-c81f098897a7",
+          "trace": [],
+          "at": "2026-09-09T23:10:24.417Z"
+        },
+        {
+          "ok": false,
+          "detail": "health ECONNREFUSED",
+          "latencyMs": 2,
+          "requestId": "e8a39753-e92c-410f-b133-71119199edd2",
+          "trace": [],
+          "at": "2026-09-09T23:10:22.416Z"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "fault": "lock",
+      "expected": "database_locked",
+      "actual": "database_locked",
+      "detectionMs": 6046,
+      "recoveryMs": 5575,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-933cf848-2978-430f-9099-d2e146d04ad1",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 7,
+          "requestId": "ebca26f0-880d-48d8-8be8-6756003b6c87",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "ebca26f0-880d-48d8-8be8-6756003b6c87",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "ebca26f0-880d-48d8-8be8-6756003b6c87",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "ebca26f0-880d-48d8-8be8-6756003b6c87",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "ebca26f0-880d-48d8-8be8-6756003b6c87",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:10:40.429Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 7,
+          "requestId": "a0692ee1-301c-4b5a-baa8-69639b1b1a4c",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "a0692ee1-301c-4b5a-baa8-69639b1b1a4c",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "a0692ee1-301c-4b5a-baa8-69639b1b1a4c",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "a0692ee1-301c-4b5a-baa8-69639b1b1a4c",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "a0692ee1-301c-4b5a-baa8-69639b1b1a4c",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:10:38.429Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; database is locked; database is locked",
+          "latencyMs": 7,
+          "requestId": "d6b0216e-87d1-49e3-b3f6-0c8cc6f4c33c",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "d6b0216e-87d1-49e3-b3f6-0c8cc6f4c33c",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "d6b0216e-87d1-49e3-b3f6-0c8cc6f4c33c",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "d6b0216e-87d1-49e3-b3f6-0c8cc6f4c33c",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "d6b0216e-87d1-49e3-b3f6-0c8cc6f4c33c",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "database is locked",
+              "queryOnly": false
+            }
+          ],
+          "at": "2026-09-09T23:10:36.426Z"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "fault": "slow",
+      "expected": "application_wait",
+      "actual": "application_wait",
+      "detectionMs": 7061,
+      "recoveryMs": 4558,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-a9b4ae10-9808-48de-8682-3569be0786f9",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1004,
+          "requestId": "78888d83-f926-4ce0-a82b-86a082e2855c",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "78888d83-f926-4ce0-a82b-86a082e2855c",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:10:55.433Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1004,
+          "requestId": "f89f001d-14bf-43a1-bb30-b4c6a1b11ca2",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "f89f001d-14bf-43a1-bb30-b4c6a1b11ca2",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:10:53.432Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back TimeoutError",
+          "latencyMs": 1003,
+          "requestId": "c874e781-8735-4851-a853-e345d05ae5f7",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "c874e781-8735-4851-a853-e345d05ae5f7",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            }
+          ],
+          "at": "2026-09-09T23:10:51.431Z"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "fault": "readonly",
+      "expected": "database_read_only",
+      "actual": "database_read_only",
+      "detectionMs": 6048,
+      "recoveryMs": 6086,
+      "singleIncident": true,
+      "evidenceSaved": true,
+      "recoveryRecorded": true,
+      "incidentId": "INC-ff129d6d-d81e-4943-b469-ccc7ed1fcd57",
+      "samples": [
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 5,
+          "requestId": "f9f361e8-6db3-41f9-b98e-0ab9a21091c0",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "f9f361e8-6db3-41f9-b98e-0ab9a21091c0",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f9f361e8-6db3-41f9-b98e-0ab9a21091c0",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f9f361e8-6db3-41f9-b98e-0ab9a21091c0",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f9f361e8-6db3-41f9-b98e-0ab9a21091c0",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:11:08.441Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 6,
+          "requestId": "e6e59dc2-8c6a-4598-bd6e-7d008156229c",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "e6e59dc2-8c6a-4598-bd6e-7d008156229c",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "e6e59dc2-8c6a-4598-bd6e-7d008156229c",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "e6e59dc2-8c6a-4598-bd6e-7d008156229c",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "e6e59dc2-8c6a-4598-bd6e-7d008156229c",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:11:06.440Z"
+        },
+        {
+          "ok": false,
+          "detail": "health HTTP 200; write/read-back HTTP 503; attempt to write a readonly database; attempt to write a readonly database",
+          "latencyMs": 6,
+          "requestId": "f0bffafb-eb7e-4804-a1ca-5387745b8c17",
+          "trace": [
+            {
+              "type": "trace",
+              "requestId": "f0bffafb-eb7e-4804-a1ca-5387745b8c17",
+              "stage": "application",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f0bffafb-eb7e-4804-a1ca-5387745b8c17",
+              "stage": "application",
+              "status": "completed",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f0bffafb-eb7e-4804-a1ca-5387745b8c17",
+              "stage": "database_write",
+              "status": "started",
+              "elapsedMs": 0
+            },
+            {
+              "type": "trace",
+              "requestId": "f0bffafb-eb7e-4804-a1ca-5387745b8c17",
+              "stage": "database",
+              "status": "failed",
+              "elapsedMs": 0,
+              "error": "attempt to write a readonly database",
+              "queryOnly": true
+            }
+          ],
+          "at": "2026-09-09T23:11:04.439Z"
+        }
+      ]
+    }
+  ],
+  "healthyControl": {
+    "durationMs": 6500,
+    "newIncidents": 0
+  },
+  "complete": true
+}
