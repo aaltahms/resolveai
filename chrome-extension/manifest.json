@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ResolveAI Capture",
+  "version": "0.1.0",
+  "description": "Capture and review a local test page's request failures for ResolveAI.",
+  "permissions": ["activeTab", "webRequest", "storage", "alarms"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": { "service_worker": "worker.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ResolveAI Capture"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1/*"],
+      "js": ["deliver.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

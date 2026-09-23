@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>ResolveAI Capture</title
+  ><style>
+    body {
+      font: 15px system-ui;
+      width: 360px;
+      padding: 20px;
+      margin: 0;
+      color: #172b46;
+      background: #f5f7fb;
+    }
+    h1 {
+      font-size: 22px;
+      margin: 0 0 12px;
+    }
+    p {
+      line-height: 1.5;
+    }
+    button {
+      font: inherit;
+      padding: 10px 13px;
+      margin: 4px;
+      border: 1px solid #bbc9db;
+      border-radius: 7px;
+      background: white;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.4;
+    }
+    #send {
+      background: #175cd3;
+      color: white;
+    }
+    pre {
+      white-space: pre-wrap;
+      max-height: 240px;
+      overflow: auto;
+      background: white;
+      padding: 12px;
+      font-size: 12px;
+    }
+    #error {
+      color: #a02030;
+    }
+  </style>
+  <h1>ResolveAI Capture</h1>
+  <p>
+    Capture the local test page, reproduce the problem, then stop and review.
+  </p>
+  <p id="status" role="status"></p>
+  <button id="start">Start capture</button
+  ><button id="stop">Stop &amp; review</button>
+  <pre id="report">No capture yet.</pre>
+  <button id="send">Send to local ResolveAI</button
+  ><button id="clear">Discard</button>
+  <p id="error" role="alert"></p>
+  <p>
+    One tab · up to one minute. No headers, cookies, bodies, or full URLs are
+    saved. Unknown paths are omitted. Nothing is sent until you choose Send.
+  </p>
+  <script type="module" src="popup.js"></script>
+</html>
